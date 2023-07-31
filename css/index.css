@@ -1,0 +1,197 @@
+@import "./global.css";
+
+header {
+  height: 60px;
+  border-bottom: 1px solid #e5e8eb;
+}
+
+.header-inner {
+  max-width: 1140px;
+  height: 100%;
+  margin: auto;
+}
+
+nav {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 92%;
+  margin: auto;
+}
+
+.logo-img {
+  width: 110px;
+}
+
+.button-list {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.subject {
+  padding: 12px 10px;
+  font-size: 15px;
+  background-color: transparent;
+  color: #4e5968;
+  border-radius: 8px;
+}
+
+.subject:hover {
+  background-color: rgba(2, 32, 71, 0.05);
+}
+
+.hire {
+  font-size: 14px;
+  color: #f9fafb;
+  background-color: #3182f6;
+  padding: 7px 12px;
+  border-radius: 7px;
+  font-weight: 600;
+}
+
+.hire:hover {
+  color: #ffffff;
+  background-color: #1b64da;
+}
+
+footer {
+  background-color: #f9fafb;
+  padding: 50px 0 100px;
+}
+
+.footer-inner {
+  max-width: 1064px;
+  margin: auto;
+  padding: 0 67px;
+}
+
+.footer-sites {
+  display: flex;
+  margin-bottom: 50px;
+}
+
+.footer-site {
+  min-width: 170px;
+}
+
+.footer-site > div {
+  width: 100%;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  color: #333d4b;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.footer-site li {
+  height: 30px;
+  color: #6b7684;
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.footer-site li:hover {
+  text-decoration: underline;
+}
+
+address {
+  color: #8b95a1;
+  font-size: 13px;
+  margin-bottom: 54px;
+}
+
+address > strong {
+  display: block;
+  margin-bottom: 16px;
+  color: #333d4b;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.social-list {
+  display: flex;
+  gap: 8px;
+}
+
+.social-list button {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+}
+
+.social-list button:hover {
+  opacity: 1;
+}
+
+.hire-section {
+  background-color: rgba(2, 9, 19, 0.91);
+  padding: 60px 24px;
+}
+
+.hire-section-inner {
+  max-width: 640px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 3fr 7fr;
+  column-gap: 20px;
+}
+
+.hire-section-inner > div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+.section-img {
+  width: 186px;
+}
+
+.hire-section .description {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.hire-section .description > strong {
+  font-size: 26px;
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.hire-section .description > p {
+  font-size: 17px;
+  color: #e5e8eb;
+  line-height: 1.5;
+}
+
+.hire-section button {
+  margin-top: 24px;
+  color: #f9fafb;
+  background-color: #3182f6;
+  font-size: 15px;
+  border-radius: 7px;
+  padding: 11px 16px;
+}
+
+.hire-section button:hover {
+  background-color: #1b64da;
+}
+
+main {
+  max-width: 980px;
+  min-height: 100vh;
+  margin: auto;
+}
+
+main > div {
+  width: 92%;
+  margin: auto;
+}
