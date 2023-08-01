@@ -9,8 +9,8 @@ const routesMap = new Map([
 ]);
 
 const render = (component) => {
-  root.innerHTML = component.template;
-  component.function();
+  root.innerHTML = component.template();
+  component.method();
 };
 
 const handleRoute = () => {
@@ -19,8 +19,27 @@ const handleRoute = () => {
   render(component);
 };
 
+const push = (path, queryParams) => {
+  const searchParams = new URLSearchParams(queryParams);
+  const newPath = queryParams ? path + "?" + searchParams.toString() : path;
+
+  history.pushState(queryParams, "", newPath);
+  handleRoute();
+};
+
+const getQueryParams = () => {
+  const urlParams = new URLSearchParams(location.search);
+  const queryParamsObject = {};
+
+  for (const [key, value] of urlParams.entries()) {
+    queryParamsObject[key] = value;
+  }
+
+  return queryParamsObject;
+};
+
 window.addEventListener("popstate", handleRoute);
 
 handleRoute();
 
-export { handleRoute };
+export { handleRoute, push, getQueryParams };

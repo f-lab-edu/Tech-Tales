@@ -1,19 +1,23 @@
-import { handleRoute } from "./index.js";
+import { getQueryParams, push } from "./index.js";
 
 const Detail = {
-  function: () => {
-    const backBtn = document.querySelector(".back-btn");
-    backBtn.addEventListener("click", () => {
-      window.history.pushState({}, "", "/");
-      handleRoute();
-    });
+  method: () => {
+    const queryparams = getQueryParams();
+    const $backButton = document.querySelector(".back-button");
+
+    document.getElementById(
+      "articleId"
+    ).textContent = `${queryparams.articleId}번`;
+    $backButton.addEventListener("click", () => push("/"));
   },
-  template: `
-    <div>
-      <h1>상세페이지</h1>
-      <button class='back-btn'>목록 페이지 이동</button>
-    </div>
-  `,
+  template: () => {
+    return `
+     <div>
+       <h1><span id="articleId"></span> 상세페이지</h1>
+       <button class='back-button'>목록 페이지 이동</button>
+     </div>
+   `;
+  },
 };
 
 export default Detail;

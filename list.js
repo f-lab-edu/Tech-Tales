@@ -1,19 +1,27 @@
-import { handleRoute } from "./index.js";
+import { push } from "./index.js";
 
 const List = {
-  function: () => {
-    const detailBtn = document.querySelector(".detail-btn");
-    detailBtn.addEventListener("click", () => {
-      window.history.pushState({}, "", "/detail");
-      handleRoute();
-    });
+  method: () => {
+    const goDetail = (event) => {
+      const articleId = event.target.dataset.article;
+      push("/detail", { articleId: articleId });
+    };
+
+    const $detailButton = document.querySelectorAll(".detail-button");
+    $detailButton.forEach((button) =>
+      button.addEventListener("click", goDetail)
+    );
   },
-  template: `
-    <div>
-      <h1>목록페이지</h1>
-      <button class='detail-btn'>상세페이지 이동</button>
-    </div>
-  `,
+  template: () => {
+    return `
+      <div>
+        <h1>목록페이지</h1>
+        <button data-article="1" class="detail-button">1번 상세페이지 이동</button>
+        <button data-article="2" class="detail-button">2번 상세페이지 이동</button>
+        <button data-article="3" class="detail-button">3번 상세페이지 이동</button>
+      </div>
+    `;
+  },
 };
 
 export default List;
