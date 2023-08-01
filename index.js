@@ -1,10 +1,26 @@
-const goDetail = (event) => {
-  const articleId = event.target.dataset.article;
-  const url = `detail.html?articleId=${encodeURIComponent(articleId)}`;
-  location.href = url;
+import List from "./List.js";
+import Detail from "./Detail.js";
+
+const root = document.getElementById("root");
+
+const routesMap = new Map([
+  ["/", List],
+  ["/detail", Detail],
+]);
+
+const render = (component) => {
+  root.innerHTML = component.template;
+  component.function();
 };
 
-const detailButton = document.querySelectorAll(".detail-btn");
-detailButton.forEach((button) => {
-  button.addEventListener("click", goDetail);
-});
+const handleRoute = () => {
+  const path = window.location.pathname;
+  const component = routesMap.get(path);
+  render(component);
+};
+
+window.addEventListener("popstate", handleRoute);
+
+handleRoute();
+
+export { handleRoute };

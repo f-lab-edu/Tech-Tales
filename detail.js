@@ -1,6 +1,19 @@
-const urlParams = new URLSearchParams(window.location.search);
-const articleId = urlParams.get("articleId");
+import { handleRoute } from "./index.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  document.getElementById("articleId").textContent = `${articleId}번`;
-});
+const Detail = {
+  function: () => {
+    const backBtn = document.querySelector(".back-btn");
+    backBtn.addEventListener("click", () => {
+      window.history.pushState({}, "", "/");
+      handleRoute();
+    });
+  },
+  template: `
+    <div>
+      <h1>상세페이지</h1>
+      <button class='back-btn'>목록 페이지 이동</button>
+    </div>
+  `,
+};
+
+export default Detail;
