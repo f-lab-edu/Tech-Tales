@@ -1,10 +1,10 @@
-import { push } from "./index.js";
+import { push } from "./router.js";
 
 const List = {
   method: () => {
     const goDetail = (event) => {
       const articleId = event.target.dataset.article;
-      push("/detail", { articleId: articleId });
+      push(`/articles/${articleId}`);
     };
 
     const $detailButton = document.querySelectorAll(".detail-button");
