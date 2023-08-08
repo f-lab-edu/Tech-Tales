@@ -1,7 +1,9 @@
-import { push } from "./router.js";
+import useRouter from "../../router.js";
 
-const List = {
-  method: () => {
+const ArticleListPage = {
+  componentDidMount: () => {
+    const { push } = useRouter();
+
     const goDetail = (event) => {
       const articleId = event.target.dataset.article;
       push(`/articles/${articleId}`);
@@ -12,7 +14,7 @@ const List = {
       button.addEventListener("click", goDetail)
     );
   },
-  template: () => {
+  render: () => {
     return `
       <div>
         <h1>목록페이지</h1>
@@ -24,4 +26,4 @@ const List = {
   },
 };
 
-export default List;
+export default ArticleListPage;

@@ -1,4 +1,6 @@
-import { handleRoute } from "./router.js";
+import useRouter from "./router.js";
+
+const { handleRoute } = useRouter();
 
 window.addEventListener("popstate", handleRoute);
 
