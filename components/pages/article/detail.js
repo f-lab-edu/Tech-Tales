@@ -1,12 +1,10 @@
 import articleList from "../../../data/articles.js";
-import { applyStyle } from "../../../utils/css.js";
 import useRouter from "../../../utils/router.js";
 import Layout from "../../layout/index.js";
 import Vote from "../../vote.js";
 
 const ArticleDetailPage = {
   componentDidMount: () => {
-    applyStyle("/css/articleDetail.css");
     Vote.componentDidMount();
   },
   render: () => {

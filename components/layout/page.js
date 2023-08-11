@@ -1,14 +1,11 @@
-import { applyStyle } from "../../utils/css.js";
-
-const Page = (content, props) => {
+const Page = (content) => {
   return {
     componentDidMount: () => {
-      applyStyle("/css/page.css");
       content.componentDidMount();
     },
     render: () => `
       <div>
-        <h2 id="page-title">${props.title}</h2>
+        <h2 id="page-title">${content.props.title}</h2>
         ${content.render()}
       </div>
     `,

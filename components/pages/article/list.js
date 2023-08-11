@@ -1,5 +1,4 @@
 import articleList from "../../../data/articles.js";
-import { applyStyle } from "../../../utils/css.js";
 import useRouter from "../../../utils/router.js";
 import Layout from "../../layout/index.js";
 import Page from "../../layout/page.js";
@@ -7,8 +6,6 @@ import Page from "../../layout/page.js";
 const ArticleListPage = {
   componentDidMount: () => {
     const { push } = useRouter();
-
-    applyStyle("/css/articleList.css");
 
     const goDetail = (event) => {
       const articleButton = event.target.closest(".detail-button");
@@ -23,7 +20,7 @@ const ArticleListPage = {
   },
   render: () => {
     return `
-      <div class="wrapper">
+      <div class="article-wrapper">
         ${articleList
           .map(
             (article) => `
@@ -41,6 +38,9 @@ const ArticleListPage = {
       </div>
     `;
   },
+  props: {
+    title: "개발",
+  },
 };
 
-export default Layout(Page(ArticleListPage, { title: "개발" }));
+export default Layout(Page(ArticleListPage));

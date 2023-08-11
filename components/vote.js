@@ -1,12 +1,8 @@
-import { applyStyle } from "../utils/css.js";
-
 const Vote = {
-  componentDidMount: () => {
-    applyStyle("/css/vote.css");
-  },
+  componentDidMount: () => {},
   render: () => {
     return `
-      <div id="wrapper">
+      <div id="vote-wrapper">
         <h3>재미있게 읽으셨나요?</h3>
         <p>좋았는지, 아쉬웠는지, 아래 이모지를 눌러 의견을 들려주세요.</p>
         <div id="emoji-wrapper">
