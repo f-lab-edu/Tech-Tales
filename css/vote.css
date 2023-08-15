@@ -1,4 +1,4 @@
-#vote-wrapper {
+.vote-wrapper {
   margin-top: 54px;
   padding: 48px;
   background-color: #f9fafb;
@@ -8,32 +8,32 @@
   align-items: center;
 }
 
-#vote-wrapper h3 {
+.vote-wrapper h3 {
   font-size: 24px;
   font-weight: 700;
   margin-bottom: 16px;
   color: #4e5968;
 }
 
-#vote-wrapper p {
+.vote-wrapper p {
   line-height: 1.5;
   font-weight: 600;
   color: #6b7684;
   margin-bottom: 4px;
 }
 
-#emoji-wrapper {
+.emoji-wrapper {
   display: flex;
   margin-top: 16px;
 }
 
-#emoji-wrapper div {
+.emoji-wrapper div {
   font-size: 40px;
   cursor: pointer;
   margin: 0px 12px;
 }
 
-#share-button {
+.share-button {
   display: flex;
   padding: 11px 16px;
   color: #1b64da;
@@ -45,11 +45,11 @@
   transition: 0.2s ease;
 }
 
-#share-button img {
+.share-button img {
   width: 16px;
   height: 16px;
 }
 
-#share-button:hover {
+.share-button:hover {
   background-color: #c9e2ff;
 }

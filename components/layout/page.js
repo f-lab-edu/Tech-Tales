@@ -1,12 +1,12 @@
-const Page = (content) => {
+const Page = (props) => {
   return {
     componentDidMount: () => {
-      content.componentDidMount();
+      props.componentDidMount();
     },
     render: () => `
       <div>
-        <h2 id="page-title">${content.props.title}</h2>
-        ${content.render()}
+        <h2 class="page-title">${props.title}</h2>
+        ${props.render()}
       </div>
     `,
   };

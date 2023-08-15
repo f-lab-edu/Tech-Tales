@@ -15,16 +15,16 @@ const ArticleDetailPage = {
 
     return `
       <div>
-        <img id="article-image" src="/assets/images/articles/${article.image}" />
-        <h1 id="article-title">${article.title}</h1>
-        <div id="upload-wrapper">
-          <img id="uploader-image" src="/assets/images/people/${article.uploader.image}" />
+        <img class="article-image" src="/assets/images/articles/${article.image}" />
+        <h1 class="article-title">${article.title}</h1>
+        <div class="upload-wrapper">
+          <img class="uploader-image" src="/assets/images/people/${article.uploader.image}" />
           <div>
-            <span id="uploader-name">${article.uploader.name}</span>
-            <span id="upload-date">${article.uploadDate}</span>
+            <span class="uploader-name">${article.uploader.name}</span>
+            <span class="upload-date">${article.uploadDate}</span>
           </div>
         </div>
-        <div id="main-content">
+        <div class="main-content">
           ${article.content()}
         </div>
       </div>

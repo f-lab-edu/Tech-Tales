@@ -38,9 +38,7 @@ const ArticleListPage = {
       </div>
     `;
   },
-  props: {
-    title: "개발",
-  },
+  title: "개발",
 };
 
 export default Layout(Page(ArticleListPage));

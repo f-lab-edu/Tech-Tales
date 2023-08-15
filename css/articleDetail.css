@@ -1,10 +1,10 @@
-#article-image {
+.article-image {
   width: 100%;
   border-radius: 12px;
   margin-top: 36px;
 }
 
-#article-title {
+.article-title {
   margin-top: 20px;
   font-size: 48px;
   font-weight: 700;
@@ -12,36 +12,36 @@
   color: #333d4b;
 }
 
-#upload-wrapper {
+.upload-wrapper {
   margin-top: 20px;
   display: flex;
 }
 
-#upload-wrapper > img {
+.upload-wrapper > img {
   width: 48px;
   height: 48px;
   border-radius: 156px;
   margin-right: 14px;
 }
 
-#upload-wrapper > div {
+.upload-wrapper > div {
   display: flex;
   flex-direction: column;
 }
 
-#uploader-name {
+.uploader-name {
   font-size: 17px;
   padding-top: 8px;
   margin-bottom: 2px;
   color: #4e5968;
 }
 
-#upload-date {
+.upload-date {
   font-size: 14px;
   line-height: 1.5;
   color: #8b95a1;
 }
 
-#main-content {
+.main-content {
   margin-top: 54px;
 }
