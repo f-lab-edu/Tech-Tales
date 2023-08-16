@@ -1,9 +1,3 @@
-@import "./layout.css";
-@import "./articleDetail.css";
-@import "./articleList.css";
-@import "./page.css";
-@import "./vote.css";
-
 * {
   margin: 0;
   padding: 0;

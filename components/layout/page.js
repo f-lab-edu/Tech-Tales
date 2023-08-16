@@ -1,3 +1,5 @@
+import "../../css/page.css";
+
 const Page = (props) => {
   return {
     componentDidMount: () => {

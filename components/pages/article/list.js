@@ -3,6 +3,8 @@ import useRouter from "../../../utils/router.js";
 import Layout from "../../layout/index.js";
 import Page from "../../layout/page.js";
 
+import "../../../css/articleList.css";
+
 const ArticleListPage = {
   componentDidMount: () => {
     const { push } = useRouter();
@@ -25,7 +27,7 @@ const ArticleListPage = {
           .map(
             (article) => `
               <button data-article="${article.id}" class="detail-button">
-                <img class="article-image" src="/assets/images/articles/${article.image}" />
+                <img class="article-list-image" src="${article.image}" />
                 <div>
                   <h3>${article.title}</h3>
                   <p>${article.description}</p>

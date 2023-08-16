@@ -1,4 +1,13 @@
-import useRouter from "../../utils/router.js";
+import useRouter from "../../utils/router";
+
+import "../../css/layout.css";
+import LogoIcon from "../../assets/icons/logo.svg";
+import CodeBlueImage from "../../assets/images/code-blue.png";
+import FacebookIcon from "../../assets/icons/facebook.svg";
+import BlogIcon from "../../assets/icons/blog.svg";
+import NaverIcon from "../../assets/icons/naver.svg";
+import TwitterIcon from "../../assets/icons/twitter.svg";
+import InstagramIcon from "../../assets/icons/instagram.svg";
 
 const Layout = (page) => {
   return {
@@ -10,13 +19,13 @@ const Layout = (page) => {
       page.componentDidMount();
     },
     render: () => {
-      const socialList = ["facebook", "blog", "naver", "twitter", "instagram"];
+      const socialList = [FacebookIcon, BlogIcon, NaverIcon, TwitterIcon, InstagramIcon];
 
       return `
         <header>
           <div class="header-inner">
             <nav>
-              <img class="logo-img" src="/assets/icons/logo.svg" />
+              <img class="logo-img" src="${LogoIcon}" />
               <ul class="button-list">
                 <li>
                   <button class="subject">디자인</button>
@@ -36,7 +45,7 @@ const Layout = (page) => {
         </main>
         <section class="hire-section">
           <div class="hire-section-inner">
-            <img class="section-img" src="/assets/images/code-blue.png" />
+            <img class="section-img" src="${CodeBlueImage}" />
             <div>
               <div class="description">
                 <strong>토스팀이 만드는 수많은 혁신의 순간들</strong>
@@ -81,7 +90,7 @@ const Layout = (page) => {
                 .map(
                   (el) => `
                     <li>
-                      <button><img src="/assets/icons/${el}.svg" /></button>
+                      <button><img src="${el}" /></button>
                     </li>
                   `
                 )

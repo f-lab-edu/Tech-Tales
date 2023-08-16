@@ -1,3 +1,6 @@
+import "../css/vote.css";
+import ChainIcon from "../assets/icons/chain.svg";
+
 const Vote = {
   componentDidMount: () => {},
   render: () => {
@@ -10,7 +13,7 @@ const Vote = {
           <div>🤔</div>
         </div>
         <button class="share-button">
-          <img src="/assets/icons/chain.svg" />
+          <img src="${ChainIcon}" />
           아티클 공유하기
         </button>
       </div>
