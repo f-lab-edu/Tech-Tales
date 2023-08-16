@@ -1,5 +1,6 @@
 import ArticleListPage from "../components/pages/article/list.js";
 import ArticleDetailPage from "../components/pages/article/detail.js";
+import NotFoundPage from "../components/pages/404.js";
 
 const useRouter = () => {
   const root = document.getElementById("root");
@@ -7,6 +8,7 @@ const useRouter = () => {
   const routesMap = new Map([
     ["/", ArticleListPage],
     ["/articles/:id", ArticleDetailPage],
+    ["*", NotFoundPage],
   ]);
 
   const createPage = (component) => {
@@ -16,11 +18,14 @@ const useRouter = () => {
 
   const handleRoute = () => {
     const path = window.location.pathname;
-    const matchingRoute = Array.from(routesMap.keys()).find((route) =>
-      isMatchedPath(path, route)
-    );
+    const matchingRoute = Array.from(routesMap.keys()).find((route) => isMatchedPath(path, route));
     const component = routesMap.get(matchingRoute);
-    createPage(component);
+    if (component) {
+      createPage(component);
+    } else {
+      const notFoundComponent = routesMap.get("*");
+      createPage(notFoundComponent);
+    }
   };
 
   const isMatchedPath = (path, route) => {
@@ -48,21 +53,16 @@ const useRouter = () => {
 
   const getParams = () => {
     const path = window.location.pathname;
-    const matchingRoute = Array.from(routesMap.keys()).find((route) =>
-      isMatchedPath(path, route)
-    );
+    const matchingRoute = Array.from(routesMap.keys()).find((route) => isMatchedPath(path, route));
 
     const params = {};
 
     const pathSegments = path.split("/").filter((segment) => segment !== "");
-    const routeSegments = matchingRoute
-      .split("/")
-      .filter((segment) => segment !== "");
+    const routeSegments = matchingRoute.split("/").filter((segment) => segment !== "");
 
     for (let i = 0; i < routeSegments.length; i++) {
       const routeSegment = routeSegments[i];
-      if (routeSegment.startsWith(":"))
-        params[routeSegment.slice(1)] = pathSegments[i];
+      if (routeSegment.startsWith(":")) params[routeSegment.slice(1)] = pathSegments[i];
     }
 
     return params;
