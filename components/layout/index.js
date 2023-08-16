@@ -1,13 +1,13 @@
-import useRouter from "../../utils/router";
+import useRouter from "utils/router";
 
-import "../../css/layout.css";
-import LogoIcon from "../../assets/icons/logo.svg";
-import CodeBlueImage from "../../assets/images/code-blue.png";
-import FacebookIcon from "../../assets/icons/facebook.svg";
-import BlogIcon from "../../assets/icons/blog.svg";
-import NaverIcon from "../../assets/icons/naver.svg";
-import TwitterIcon from "../../assets/icons/twitter.svg";
-import InstagramIcon from "../../assets/icons/instagram.svg";
+import "css/layout";
+import LogoIcon from "assets/icons/logo.svg";
+import CodeBlueImage from "assets/images/code-blue.png";
+import FacebookIcon from "assets/icons/facebook.svg";
+import BlogIcon from "assets/icons/blog.svg";
+import NaverIcon from "assets/icons/naver.svg";
+import TwitterIcon from "assets/icons/twitter.svg";
+import InstagramIcon from "assets/icons/instagram.svg";
 
 const Layout = (page) => {
   return {

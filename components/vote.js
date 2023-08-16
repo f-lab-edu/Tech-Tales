@@ -1,5 +1,5 @@
-import "../css/vote.css";
-import ChainIcon from "../assets/icons/chain.svg";
+import "css/vote";
+import ChainIcon from "assets/icons/chain.svg";
 
 const Vote = {
   componentDidMount: () => {},

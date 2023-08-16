@@ -1,9 +1,9 @@
-import articleList from "../../../data/articles.js";
-import useRouter from "../../../utils/router.js";
-import Layout from "../../layout/index.js";
-import Page from "../../layout/page.js";
+import articleList from "data/articles";
+import useRouter from "utils/router";
+import Layout from "layout/index";
+import Page from "layout/page";
 
-import "../../../css/articleList.css";
+import "css/articleList";
 
 const ArticleListPage = {
   componentDidMount: () => {

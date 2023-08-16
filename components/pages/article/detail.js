@@ -1,9 +1,9 @@
-import articleList from "../../../data/articles.js";
-import useRouter from "../../../utils/router.js";
-import Layout from "../../layout/index.js";
-import Vote from "../../vote.js";
+import articleList from "data/articles";
+import useRouter from "utils/router";
+import Layout from "layout/index";
+import Vote from "components/vote";
 
-import "../../../css/articleDetail.css";
+import "css/articleDetail";
 
 const ArticleDetailPage = {
   componentDidMount: () => {

@@ -1,7 +1,7 @@
-import FrontendDivingImage from "../assets/images/articles/frontend-diving-club.jpg";
-import NodejsSecurityImage from "../assets/images/articles/node-js-security.png";
-import YurimJinImage from "../assets/images/people/yurim-jin.jpg";
-import PyozziImage from "../assets/images/people/pyozzi.jpeg";
+import FrontendDivingImage from "assets/images/articles/frontend-diving-club.jpg";
+import NodejsSecurityImage from "assets/images/articles/node-js-security.png";
+import YurimJinImage from "assets/images/people/yurim-jin.jpg";
+import PyozziImage from "assets/images/people/pyozzi.jpeg";
 
 const articleList = [
   {

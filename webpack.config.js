@@ -30,4 +30,15 @@ module.exports = {
     port: 9000,
     historyApiFallback: true,
   },
+  resolve: {
+    alias: {
+      assets: path.resolve(__dirname, "./assets/"),
+      css: path.resolve(__dirname, "./css/"),
+      data: path.resolve(__dirname, "./data/"),
+      layout: path.resolve(__dirname, "./components/layout/"),
+      components: path.resolve(__dirname, "./components/"),
+      utils: path.resolve(__dirname, "./utils/"),
+    },
+    extensions: [".js", ".css"],
+  },
 };

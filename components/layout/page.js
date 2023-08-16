@@ -1,4 +1,4 @@
-import "../../css/page.css";
+import "css/page";
 
 const Page = (props) => {
   return {
