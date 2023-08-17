@@ -19,13 +19,8 @@ const useRouter = () => {
   const handleRoute = () => {
     const path = window.location.pathname;
     const matchingRoute = Array.from(routesMap.keys()).find((route) => isMatchedPath(path, route));
-    const component = routesMap.get(matchingRoute);
-    if (component) {
-      createPage(component);
-    } else {
-      const notFoundComponent = routesMap.get("*");
-      createPage(notFoundComponent);
-    }
+    const pageComponent = routesMap.get(matchingRoute || "*");
+    createPage(pageComponent);
   };
 
   const isMatchedPath = (path, route) => {
