@@ -9,6 +9,14 @@ import NaverIcon from "assets/icons/naver.svg";
 import TwitterIcon from "assets/icons/twitter.svg";
 import InstagramIcon from "assets/icons/instagram.svg";
 
+const snss = [
+  { icon: FacebookIcon },
+  { icon: BlogIcon },
+  { icon: NaverIcon },
+  { icon: TwitterIcon },
+  { icon: InstagramIcon },
+];
+
 const Layout = (page) => {
   return {
     componentDidMount: () => {
@@ -19,8 +27,6 @@ const Layout = (page) => {
       page.componentDidMount();
     },
     render: () => {
-      const socialList = [FacebookIcon, BlogIcon, NaverIcon, TwitterIcon, InstagramIcon];
-
       return `
         <header>
           <div class="header-inner">
@@ -86,7 +92,7 @@ const Layout = (page) => {
               Copyright © Viva Republica, Inc. All Rights Reserved.
             </address>
             <ul class="social-list">
-              ${socialList
+              ${snss
                 .map(
                   (el) => `
                     <li>
