@@ -26,6 +26,7 @@
     "webpack-cli": "^5.1.4"
   },
   "dependencies": {
+    "@loadable/component": "^5.15.3",
     "webpack-dev-server": "^4.15.1"
   }
 }

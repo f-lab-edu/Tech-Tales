@@ -1,11 +1,42 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./index.js",
+  entry: {
+    main: "./index.js",
+    list: "./components/pages/article/list.js",
+    detail: "./components/pages/article/detail.js",
+  },
   output: {
-    filename: "main.js",
+    filename: "[name].js",
     publicPath: "/",
     path: path.resolve(__dirname, "dist"),
+  },
+  optimization: {
+    splitChunks: {
+      chunks: "all",
+      cacheGroups: {
+        vendors: {
+          test: /[\\/]node_modules[\\/]/,
+          name: "vendors",
+          priority: -10,
+        },
+        articleList: {
+          test: /components[\\/]pages[\\/]article[\\/]list\.js/,
+          name: "articleList",
+          priority: -5,
+        },
+        articleDetail: {
+          test: /components[\\/]pages[\\/]article[\\/]detail\.js/,
+          name: "articleDetail",
+          priority: -5,
+        },
+        default: {
+          minChunks: 2,
+          priority: -20,
+          reuseExistingChunk: true,
+        },
+      },
+    },
   },
   module: {
     rules: [
