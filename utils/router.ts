@@ -2,16 +2,22 @@ import ArticleListPage from "components/pages/article/list";
 import ArticleDetailPage from "components/pages/article/detail";
 import NotFoundPage from "components/pages/404";
 
+export interface Component {
+  componentDidMount: () => void;
+  render: () => string;
+  [key: string]: string | number | Function;
+}
+
 const useRouter = () => {
   const root = document.getElementById("root");
 
-  const routesMap = new Map([
+  const routesMap: Map<string, Component> = new Map([
     ["/", ArticleListPage],
     ["/articles/:id", ArticleDetailPage],
     ["*", NotFoundPage],
   ]);
 
-  const createPage = (component) => {
+  const createPage = (component: Component) => {
     root.innerHTML = component.render();
     component.componentDidMount();
   };
@@ -23,7 +29,7 @@ const useRouter = () => {
     createPage(pageComponent);
   };
 
-  const isMatchedPath = (path, route) => {
+  const isMatchedPath = (path: string, route: string) => {
     const pathSegments = path.split("/").filter((segment) => segment !== "");
     const routeSegments = route.split("/").filter((segment) => segment !== "");
 
@@ -38,7 +44,7 @@ const useRouter = () => {
     return true;
   };
 
-  const push = (path, queryParams) => {
+  const push = (path: string, queryParams?: string) => {
     const searchParams = new URLSearchParams(queryParams);
     const newPath = queryParams ? path + "?" + searchParams.toString() : path;
 
@@ -50,7 +56,7 @@ const useRouter = () => {
     const path = window.location.pathname;
     const matchingRoute = Array.from(routesMap.keys()).find((route) => isMatchedPath(path, route));
 
-    const params = {};
+    const params: { [key: string]: string } = {};
 
     const pathSegments = path.split("/").filter((segment) => segment !== "");
     const routeSegments = matchingRoute.split("/").filter((segment) => segment !== "");
@@ -65,7 +71,7 @@ const useRouter = () => {
 
   const getQueryParams = () => {
     const urlParams = new URLSearchParams(location.search);
-    const queryParamsObject = {};
+    const queryParamsObject: { [key: string]: string } = {};
 
     for (const [key, value] of urlParams.entries()) {
       queryParamsObject[key] = value;

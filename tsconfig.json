@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "allowJs": true,
+    "target": "es5",
+    "module": "es6",
+    "baseUrl": ".",
+    "moduleResolution": "node",
+    "noImplicitAny": true,
+    "downlevelIteration": true,
+    "paths": {
+      "assets/*": ["./assets/*"],
+      "css/*": ["./css/*"],
+      "data/*": ["./data/*"],
+      "layout/*": ["./components/layout/*"],
+      "components/*": ["./components/*"],
+      "utils/*": ["./utils/*"]
+    }
+  },
+  "include": ["./**/*"]
+}
