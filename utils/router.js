@@ -1,6 +1,6 @@
-import ArticleListPage from "../components/pages/article/list.js";
-import ArticleDetailPage from "../components/pages/article/detail.js";
-import NotFoundPage from "../components/pages/404.js";
+import ArticleListPage from "components/pages/article/list";
+import ArticleDetailPage from "components/pages/article/detail";
+import NotFoundPage from "components/pages/404";
 
 const useRouter = () => {
   const root = document.getElementById("root");
