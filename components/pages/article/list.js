@@ -1,7 +1,9 @@
-import articleList from "../../../data/articles.js";
-import useRouter from "../../../utils/router.js";
-import Layout from "../../layout/index.js";
-import Page from "../../layout/page.js";
+import articleList from "data/articles";
+import useRouter from "utils/router";
+import Layout from "layout/index";
+import Page from "layout/page";
+
+import "css/articleList";
 
 const ArticleListPage = {
   componentDidMount: () => {
@@ -25,7 +27,7 @@ const ArticleListPage = {
           .map(
             (article) => `
               <button data-article="${article.id}" class="detail-button">
-                <img class="article-image" src="/assets/images/articles/${article.image}" />
+                <img class="article-list-image" src="${article.image}" />
                 <div>
                   <h3>${article.title}</h3>
                   <p>${article.description}</p>
