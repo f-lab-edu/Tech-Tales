@@ -1,4 +1,4 @@
-import useRouter from "utils/router";
+import useRouter from "./utils/router.js";
 
 const { handleRoute } = useRouter();
 
