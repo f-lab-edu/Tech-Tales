@@ -8,29 +8,28 @@
 토스 기술 블로그를 참고하여 기술에 대한 이야기를 모아두는 기술 블로그입니다.
 
 Vanilla JavaScript로 Single Page Application을 개발하였습니다.  
-index.html의 html 파일 하나와 index.js로 시작하는 JavaScript 파일들로 구성되어 있습니다.
+index.html의 html 파일 하나와 index.ts로 시작하는 TypeScript 파일들로 구성되어 있습니다.
 
-router.js 파일을 활용하여 라우터 기능을 구현하였습니다.
+router.ts 파일을 활용하여 라우터 기능을 구현하였습니다.
+
+## 설치 및 시작하기
+
+먼저 [Node.js](https://nodejs.org/ko)와 [Git](https://git-scm.com/)이 설치되어 있어야합니다.
+
+```
+git clone https://github.com/f-lab-edu/Tech-Tales.git
+cd tech-tales
+npm install
+npm start
+```
+
+이후 서버가 열리면 http://localhost:9000 에서 확인할 수 있습니다.
 
 ## 사용 기술
 
-- 언어: HTML, CSS, JavaScript
-- 라이브러리: Jest, Cypress, Webpack
-
-### Jest
-
-- 유닛 테스트를 위해서 사용했습니다.
-- router의 각 함수들이 예상대로 동작하는지 함수별로 테스트했습니다.
-
-### Cypress
-
-- Headless 테스트 및 실제 브라우저로 E2E 테스트를 위해서 사용했습니다.
-- 각 페이지로 이동이 정상적으로 되고, 정상적으로 로드가 되는지 테스트했습니다.
-
-### Webpack
-
-- 번들링을 위해 사용했습니다.
-- 절대경로 설정, 로더를 사용하여 CSS 및 Image가 import 가능하도록 했습니다.
+- 언어: HTML, CSS, JavaScript, TypeScript
+- 라이브러리: [Jest](https://jestjs.io/), [Cypress](https://www.cypress.io/), [Webpack](https://webpack.kr/)
+- 기타: [Node.js](https://nodejs.org/ko)(18.7.0), [npm](https://www.npmjs.com/)(8.15.0)
 
 ## 폴더 구조 설계
 
@@ -50,10 +49,11 @@ router.js 파일을 활용하여 라우터 기능을 구현하였습니다.
 
 ## 기능 설명
 
-### SPA 설명
+### SPA 구성
 
-- Single Page Application, 즉 하나의 html 파일을 사용하여 프로젝트를 만들었습니다.
-- index.html의 body에 \<div id="root">\</div>를 두어 현재 페이지 주소에 따라서 컴포넌트를 다르게 보여주도록 하였습니다.
+- Single Page Application, 즉 하나의 html 파일, index.html만 생성하여 프로젝트를 만들었습니다.
+- index.html의 body에 위치한 \<div id="root">\</div>를 통해 각 페이지의 컴포넌트를 동적으로 렌더링합니다.
+- 페이지 주소에 따라 각 컴포넌트를 렌더링하여 보여줍니다. 이를 위해 컴포넌트 전환을 처리하는 router.ts 모듈을 구현하였습니다.
 
 - 각 컴포넌트는 객체 또는 함수 형식을 띄고 있습니다.
 - 모두 반환되는 값은 객체 형식으로 화면을 그릴 때 실행시키는 함수인 componentDidMount, html형식의 문자열을 반환하는 함수인 render를 가지게 됩니다.
