@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: "./index.js",
+  entry: "./index.ts",
   output: {
     filename: "main.js",
     publicPath: "/",
@@ -9,6 +9,11 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.tsx?$/,
+        use: "ts-loader",
+        exclude: /node_modules/,
+      },
       {
         test: /\.css$/i,
         use: ["style-loader", "css-loader"],
@@ -39,6 +44,6 @@ module.exports = {
       components: path.resolve(__dirname, "./components/"),
       utils: path.resolve(__dirname, "./utils/"),
     },
-    extensions: [".js", ".css"],
+    extensions: [".js", ".ts", ".css"],
   },
 };

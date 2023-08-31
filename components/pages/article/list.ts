@@ -9,8 +9,8 @@ const ArticleListPage = {
   componentDidMount: () => {
     const { push } = useRouter();
 
-    const goDetail = (event) => {
-      const articleButton = event.target.closest(".detail-button");
+    const goDetail = (event: MouseEvent) => {
+      const articleButton = event.currentTarget as HTMLElement;
       if (articleButton) {
         const articleId = articleButton.dataset.article;
         push(`/articles/${articleId}`);

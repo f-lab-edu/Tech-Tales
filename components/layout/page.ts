@@ -1,6 +1,8 @@
+import { Component } from "utils/router";
+
 import "css/page";
 
-const Page = (props) => {
+const Page = (props: Component) => {
   return {
     componentDidMount: () => {
       props.componentDidMount();

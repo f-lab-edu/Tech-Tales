@@ -1,4 +1,4 @@
-import useRouter from "utils/router";
+import useRouter, { Component } from "utils/router";
 
 import "css/layout";
 import LogoIcon from "assets/icons/logo.svg";
@@ -17,7 +17,7 @@ const snss = [
   { icon: InstagramIcon },
 ];
 
-const Layout = (page) => {
+const Layout = (page: Component) => {
   return {
     componentDidMount: () => {
       const { push } = useRouter();
